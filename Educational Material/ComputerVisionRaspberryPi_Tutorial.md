@@ -1,13 +1,18 @@
 # Using Machine Learning and Cameras on the Edge for Conservation and Sustainability
 
-This tutorial is a step step instruction manual on how to:
+
+### This tutorial is a step step instruction manual on how to:
 1. Set up a network to connect your computer to a Raspberry pi,
 2. Connecting a Camera to your Raspberry Pi
-3. Connect a Raspberry Pi (a single board computer) to a BrainCraft Hat (a microprocessor that adds a screen, audio, and microphone to your raspberry Pi) and a fan (for cooling it down when it’s overthinking), and
+3. Connect a Raspberry Pi (a single board computer) to a BrainCraft Hat (a microprocessor that adds a screen, audio, and microphone to your raspberry Pi) and a fan (for cooling it down when it’s overthinking)
 4. Configuring Raspberry Pi to do Machine Learning
 5. Adding a simple AI model using teachable machine to your raspberry PI for you to use in your conservation technology projects.
 
-*NOTE: This tutorial is written for Linux based operating systems (macOS specifically). This process should mostly work with Windows OS, but there will be some extra googling to get everything set up. Feel free to submit a windows based version or edits that would make it operating system agnostic if you feel so inclined.*
+### Important Notes:
+* Most of this tutorial has been copied from a sources around the internet and aggregated into a cohesive guide. We've done our best to link to these sources, but if you notice we've missed something, please help us fix that
+* This tutorial is written for Linux based operating systems (macOS specifically). This process should mostly work with Windows OS, but there will be some extra googling to get everything set up. Feel free to submit a Windows based version or edits that would make it operating system agnostic if you feel so inclined.
+* Whenever you see text within triangle brackets, this is placeholder text. Make sure to replace the placeholder text and brackets with the right information. For instance `<Favorite_Animal>` would be `tiger`
+* In the bash commands we share with you, the `$` signifies the beginning of a line. You do not need to paste this part of the command into your terminal.
 
 
 ## 1. Materials Needed
@@ -176,7 +181,7 @@ ping raspberrypi.local
 
 [Once you’ve ssh'd into your Pi install VNC on your Pi by following the steps here. ](https://www.raspberrypi.org/documentation/remote-access/vnc/)
 
-  ```bash
+```bash
 pi@hostname:~ $ sudo apt update
 pi@hostname:~ $ sudo apt install realvnc-vnc-server realvnc-vnc-viewer
 ```
@@ -186,7 +191,7 @@ pi@hostname:~ $ sudo apt install realvnc-vnc-server realvnc-vnc-viewer
 After installing the VNC server, you have to enable it.
 
 
-  ```bash
+```bash
 pi@hostname:~ $ sudo raspi-config
 ```
 
@@ -198,7 +203,7 @@ To connect to your Raspberry Pi’s desktop launch the VNC viewer and type down 
 
 
 ## 3. Setting Up The Camera
-
+_[Most of this section is sourced from this guide](https://projects.raspberrypi.org/en/projects/getting-started-with-picamera)_
 
 ### Introduction
 
