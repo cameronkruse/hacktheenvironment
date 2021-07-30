@@ -7,7 +7,7 @@ The event was run over 3 days. The first day was an educational day where we tau
 
 ## Resources
 * [Ethical Technologist Pledge](./Ethical_Technologist_Pledge.pdf) - each student was required to sign this before the event
-* [Schedule of Events]() - This was loosely adhered to as we tried to match the students pace
+* [Schedule of Events](./Schedule.md) - This was loosely adhered to as we tried to match the students pace
 * [Tutorial on how to build and set up the Raspberry Pi ML enabled camera systems](./ComputerVisionRaspberryPi_Tutorial.md) - Most of day two was spent following this tutorial
 * [Hackathon Prompt](./Hackathon_Prompt.md) - A scenario and explanation of the challenge with rules and judging criteria
 * [Educational Material](./Educational_Material) - Presentations shared with the students during educational sessions.
