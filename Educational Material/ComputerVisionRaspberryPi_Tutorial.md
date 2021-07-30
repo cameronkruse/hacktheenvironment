@@ -131,7 +131,7 @@ Install nmap on your computer. nmap is a network sniffing tool for understanding
 
 1. First identify your own IP address. You can do this by holding on the “option” button on your Mac keyboard while clicking on the “wifi” button on your top menu. Write down the IP address that your computer is using. The first time you run nmap from your terminal make sure you do it without turning on your PI.
 
-    ```bash
+```bash
 nmap -sP <YOUR_IP_ADDRESS>/24
 nmap -sP 192.168.1.79/24
 ```
@@ -139,7 +139,7 @@ nmap -sP 192.168.1.79/24
 
 2. Now that you’ve seen the IP addresses that are in your network, turn on your PI and see if there is _a new IP address. _The new IP address will be the IP address that your PI is using. Note, if you don’t see a new IP address you might have to plug the SD card back on your computer and make sure that you’ve done all the steps in the previous section correctly. Once you identify it you’re going to want to ssh into it from your Mac’s terminal:
 
-    ```bash
+```bash
 ssh pi@<YOURIPNETWORK>
 ssh pi@192.168.1.90
 ```
@@ -147,14 +147,14 @@ ssh pi@192.168.1.90
 
 3. If you don’t find your raspberry address here, or if it doesn’t work do:
 
-    ```bash
+```bash
 ssh pi@raspberrypi.local
 ```
 
 4. Say "yes" and connect to the pi using the default password “raspberry”. If you are able to ssh then you’re connected to the internet!
 5. Before you move forward, if this works, ping this ip address.
 
-   ```bash
+```bash
 ping raspberrypi.local
 ```
 
