@@ -6,7 +6,7 @@ These materials were used to run a 3 day hackathon for a group of high schoolers
 The event was run over 3 days. The first day was an educational day where we taught fundamental skills and introduced the premise of a hackathon. The second day was mostly spent building the Raspberry Pi camera systems and teams started building out their project ideas. The third day the students finished up their projects and presented their solutions. We had each team submit their final presentations and code to individual Google Drive folders, but you could also use Github repos.
 
 ## Resources
-* [Ethical Technologist Pledge](./Ethical_Technologist_Pledge.pdf) - each student was required to sign this before the event
+* [Ethical TechnologistPledge](./Ethical_Technologist_Pledge.pdf) - each student was required to sign this before the event
 * [Schedule of Events]() - This was loosely adhered to as we tried to match the students pace
 * [Tutorial on how to build and set up the Raspberry Pi ML enabled camera systems](./ComputerVisionRaspberryPi_Tutorial.md) - Most of day two was spent following this tutorial
 * [Hackathon Prompt](./Hackathon_Prompt.md) - A scenario and explanation of the challenge with rules and judging criteria
