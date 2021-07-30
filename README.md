@@ -1,6 +1,6 @@
 # HackTheEnvironment
 
-These materials were used to run a three day hackathon for a group of high school students as a part of a summer program in Boston. We've published them here for others to use and run similar events. If you want to use any of these materials for your event, feel free to fork this repo and customize for your needs. The fork for the [original event with team submissions is here]().
+These materials were used to run a three day hackathon for a group of high school students as a part of a summer program in Boston. We've published them here for others to use and run similar events. If you want to use any of these materials for your event, feel free to fork this repo and customize for your needs. The branch for the [original event with team submissions is here]().
 
 ## Format
 The event was run over 3 days. The first day was an educational day where we taught fundamental skills and introduced the premise of a hackathon. The second day was mostly spent building the Raspberry Pi camera systems and teams started building out their project ideas. The third day the students finished up their projects and presented their solutions. We had each team submit their final presentations and code to individual Google Drive folders, but you could also use Github repos.
