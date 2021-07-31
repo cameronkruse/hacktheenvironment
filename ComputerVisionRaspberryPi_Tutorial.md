@@ -175,21 +175,19 @@ ping raspberrypi.local
 ### 2.4 Seeing and Controlling your Raspberry Pi’s Desktop through your Laptop
 
 **Useful links:**
-* [https://spin.atomicobject.com/2019/06/09/raspberry-pi-laptop-display](https://spin.atomicobject.com/2019/06/09/raspberry-pi-laptop-display)
-* [https://magpi.raspberrypi.org/articles/vnc-raspberry-pi ](https://magpi.raspberrypi.org/articles/vnc-raspberry-pi )
+* [Connecting to RasPI without display](https://spin.atomicobject.com/2019/06/09/raspberry-pi-laptop-display)
+* [Connecting via VNC](https://magpi.raspberrypi.org/articles/vnc-raspberry-pi )
 
 
-[Once you’ve ssh'd into your Pi install VNC on your Pi by following the steps here. ](https://www.raspberrypi.org/documentation/remote-access/vnc/)
+[We outline the steps below, but check out this tutorial for more info on connecting via VNC.](https://www.raspberrypi.org/documentation/remote-access/vnc/) We've copied the commands below from this tutorial.
 
+You can install VNC via the command line running:
 ```bash
 pi@hostname:~ $ sudo apt update
 pi@hostname:~ $ sudo apt install realvnc-vnc-server realvnc-vnc-viewer
 ```
 
-
-
 After installing the VNC server, you have to enable it.
-
 
 ```bash
 pi@hostname:~ $ sudo raspi-config
@@ -199,7 +197,7 @@ A pop-up will appear → navigate to “Interface/ing Options” → navigate to
 
 Now we install VNC on our computer by [downloading it from here](https://www.realvnc.com/en/connect/download/viewer/).
 
-To connect to your Raspberry Pi’s desktop launch the VNC viewer and type down the IP address of your PI as the VNC server address. Use username “pi” and the password you changed above. You initially might have some trouble connecting and you’ll get an error that might say `Cannot Currently Show the Desktop`. If so, follow the first instruction [here](https://www.tomshardware.com/how-to/fix-cannot-currently-show-desktop-error-raspberry-pi ) on how to change the resolution of the desktop. Try again. If it works … hooray! If not, keep trying until you figure out what the problem is. Awesome! We’re ready to begin the actual fun part.
+To connect to your Raspberry Pi’s desktop launch the VNC viewer and type down the IP address of your PI as the VNC server address. Use username `pi` and the password you changed above. You initially might have some trouble connecting and you’ll get an error that might say `Cannot Currently Show the Desktop`. If so, follow the first instruction [here](https://www.tomshardware.com/how-to/fix-cannot-currently-show-desktop-error-raspberry-pi ) on how to change the resolution of the desktop. Try again. If it works … hooray! If not, keep trying until you figure out what the problem is. Awesome! We’re ready to begin the fun part.
 
 
 ## 3. Setting Up The Camera
