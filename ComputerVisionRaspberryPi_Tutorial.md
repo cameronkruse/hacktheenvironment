@@ -602,6 +602,12 @@ pip3 install ./tensorflow-2.3.1-cp37-none-linux_armv7l.whl
 pip3 install -e .
 ```
 
+**IF ONE OF THE TWO CODE BLOCKS ABOVE DOESN'T WORK:**
+This is likely because you are using a newer version of Python. To install tensorflow activate your virtual environment by inputing:
+```source .venv/bin/activate```
+and then install tensorflow using pip:
+```python3 -m pip install tflite-runtime```
+
 
 ![alt_text](images/image10.png "image_tooltip")
 
