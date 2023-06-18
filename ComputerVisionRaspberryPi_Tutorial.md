@@ -67,9 +67,10 @@ First lets access the places in the SD that we’ll edit
 
 
 ```bash
-$ cd /Volumes
-#we're going to choose the boot partition. You can tell which one it is, because if plug and unplug your SD card the boot inside /Volumes should appear and disappear
-$ cd /boot
+#ensure you are in the root directory. You may have to input cd .. to get to the root directory
+$ cd Volumes
+#we're going to choose the boot partition. You can tell which one it is, because if plug and unplug your SD card the bootfs inside /Volumes should appear and disappear
+$ cd /bootfs
 ```
 
 
