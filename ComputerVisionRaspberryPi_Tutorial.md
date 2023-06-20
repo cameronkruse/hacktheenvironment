@@ -51,83 +51,15 @@ _Goal: In this section we are installing an operating system on our Raspberry Pi
 ![alt_text](images/image14.png)
 * Choose the latest operating system.
 * To make sure that you are mounting the image of this operating system on your RasperyPi(not your computer - THE SD CARD), plug and unplug the SD card so that you can see it appear and disappear on the storage section of the Raspberry Pi Imager. That way you’ll make sure that you are installing the operating system in the correct place.
+* Click the gear button in the lower right hand corner of the Raspberry Pi Imager and choose the options as detailed in the screenshot below. Note, you should choose your own username, WiFi settings, and password.
+![alt_text](images/image19.png)
 * Click “WRITE” - this will install the latest operating system on your SD card.
 
-
-### 2.2 Adding Network Information on SD Card and Operating System
-
-Sources and links to learn more:
-
-1. [More info on the files your adding to connect via wifi](https://learn.adafruit.com/raspberry-pi-zero-creation/text-file-editing)
-2. [More info on how to connect to your Pi without a screen](https://spin.atomicobject.com/2019/06/09/raspberry-pi-laptop-display/)
-
-Follow the instructions in the first link above. We paste some code below to support the text in that link, which should be mostly what you need. Right now you are not doing anything on your Raspberry PI _yet_. You are adding and making changes to files inside the SD card so that you can connect to the internet. After we’ve done that we’ll move the SD card to the Raspberry Pi.
-
-First lets access the places in the SD that we’ll edit
-
-
-```bash
-#ensure you are in the root directory. You may have to input cd .. to get to the root directory
-$ cd Volumes
-#we're going to choose the boot partition. You can tell which one it is, because if plug and unplug your SD card the bootfs inside /Volumes should appear and disappear
-$ cd /bootfs
-```
-
-
-Now we create the `wpa_supplicant.conf` file that is mentioned in the link. We use this using “touch”r
-
-
-```bash
-$ touch wpa_supplicant.conf
-$ ls
-#we use ls to list out the files inside a folder. The conf file should now appear in your list of files
-```
-
-
-One we see the file we’re going to edit, the `wpa_supplicant.conf` file in this case, with the information of our network. We do this by going in the SD card and either using “vim” or “nano” to edit the file you just created. Below we use nano to open the file:
-
-
-```bash
-$ nano wpa_supplicant.conf
-```
-
-
-Copy and paste this code into that file, and edit it with the information of your network. Don’t forget to save the file after you close it!
-
-
-```bash
-ctrl_interface=DIR=/var/run/wpa_supplicant GROUP=netdev
-update_config=1
-country=US
-
-network={
-    ssid="YOURSSID"
-    psk="YOURPASSWORD"
-    scan_ssid=1
-}
-```
-
-
-Note that there are no spaces in between the “=”. If you’re outside of the US change your country code.
-
-Finally, enable SSH by creating an empty file named ssh (this will just be an empty file for now):
-
-
-```bash
-$ touch ssh
-```
-
-
-Check that all your files are there. The important ones are the wpa_supplicant and the ssh files, and then _safely remove the SD card from your computer (don’t just unplug it)._
-
-
-### 2.3 Connecting your Raspberry Pi to the Internet
+### 2.2 Connecting your Raspberry Pi to the Internet
 
 _NOTE: In a classroom with many students we must turn the Pis one by one and see their different IP addresses._
 
 **Required Downloads:**
-
-
 
 * [Visit the nmap install page here](https://nmap.org/download.html)
 
@@ -146,34 +78,26 @@ nmap -sP 192.168.1.79/24
 2. Now that you’ve seen the IP addresses that are in your network, turn on your PI and see if there is _a new IP address. _The new IP address will be the IP address that your PI is using. Note, if you don’t see a new IP address you might have to plug the SD card back on your computer and make sure that you’ve done all the steps in the previous section correctly. Once you identify it you’re going to want to ssh into it from your Mac’s terminal:
 
 ```bash
-ssh pi@<YOURIPNETWORK>
-ssh pi@192.168.1.90
+ssh <PI USERNAME>@<YOUR IP NETWORK>
+# for example
+ssh pi-name@192.168.1.90
 ```
 
 
 3. If you don’t find your raspberry address here, or if it doesn’t work do:
 
 ```bash
-ssh pi@raspberrypi.local
+ssh pi-name@raspberrypi.local
 ```
 
-4. Say "yes" and connect to the pi using the default password “raspberry”. If you are able to ssh then you’re connected to the internet!
-5. Before you move forward, if this works, ping this ip address.
+4. Say "yes" and connect to the pi using the password you set earlier. If you are able to ssh then you’re connected to the internet!
 
-```bash
-ping raspberrypi.local
-```
-
-
-6. Copy and paste the IP address.
-7. Say “yes” and connect to the pi using the default password “raspberry”. If you are able to ssh then you’re connected to the internet!
-8. From the terminal (once you’ve sshd in), change your PI’s password by using the instructions [here](https://www.raspberrypi-spy.co.uk/2012/10/how-to-change-raspberry-pi-password/).
-9. ALSO change your hostname (this is specially important if you’re working with a group of students that’s using many raspberry pis).
-10. [Follow this guide to change hostname](https://www.tomshardware.com/how-to/raspberry-pi-change-hostname)
-11. Write down your PI’s **IP address** AND **your new password** somewhere safe, we’re going to use them later on in the tutorial.
+5. Copy and paste the IP address.
+6. Say “yes” and connect to the pi using the password you set earlier. If you are able to ssh then you’re connected to the internet!
+7.  Write down your PI’s **IP address** AND **your new password** somewhere safe, we’re going to use them later on in the tutorial.
 
 
-### 2.4 Seeing and Controlling your Raspberry Pi’s Desktop through your Laptop
+### 2.3 Seeing and Controlling your Raspberry Pi’s Desktop through your Laptop
 
 **Useful links:**
 * [Connecting to RasPI without display](https://spin.atomicobject.com/2019/06/09/raspberry-pi-laptop-display)
