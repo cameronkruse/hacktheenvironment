@@ -26,7 +26,7 @@ Each team will need to successfully do two things to win the challenge: build th
 
 
 
-1. Work must stop at the end of the hackathon. No working on your project past **2pm on Sunday.**
+1. Work must stop at the end of the hackathon. No working on your project past **2pm on Monday.**
 2. You may use any tools or methods that other teams could also reasonably access, but you must **cite your sources** of where the code, data, etc. came from.
 3. You must add your algorithm, pitch presentation (Powerpoint, google slides, or apple pages), and any other code or content you’ve created to your team’s submission folder.
 4. **No copying** other teams’ work. You may have similar ideas, but no intentional copying unless you have the team’s permission.
