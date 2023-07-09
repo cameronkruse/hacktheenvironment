@@ -1,7 +1,7 @@
 # Using Machine Learning and Cameras on the Edge for Conservation and Sustainability
 
-
 ### This tutorial is a step step instruction manual on how to:
+
 1. Set up a network to connect your computer to a Raspberry pi,
 2. Connecting a Camera to your Raspberry Pi
 3. Connect a Raspberry Pi (a single board computer) to a BrainCraft Hat (a microprocessor that adds a screen, audio, and microphone to your raspberry Pi) and a fan (for cooling it down when it’s overthinking)
@@ -9,51 +9,49 @@
 5. Adding a simple AI model using teachable machine to your raspberry PI for you to use in your conservation technology projects.
 
 ### Important Notes:
-* Most of this tutorial has been copied from a sources around the internet and aggregated into a cohesive guide. We've done our best to link to these sources, but if you notice we've missed something, please help us fix that
-* This tutorial is written for Linux based operating systems (macOS specifically). This process should mostly work with Windows OS, but there will be some extra googling to get everything set up. Feel free to submit a Windows based version or edits that would make it operating system agnostic if you feel so inclined.
-* Whenever you see text within triangle brackets, this is placeholder text. Make sure to replace the placeholder text and brackets with the right information. For instance `<Favorite_Animal>` would be `tiger`
-* In the bash commands we share with you, the `$` signifies the beginning of a line. You do not need to paste this part of the command into your terminal.
 
+- Most of this tutorial has been copied from a sources around the internet and aggregated into a cohesive guide. We've done our best to link to these sources, but if you notice we've missed something, please help us fix that
+- This tutorial is written for Linux based operating systems (macOS specifically). This process should mostly work with Windows OS, but there will be some extra googling to get everything set up. Feel free to submit a Windows based version or edits that would make it operating system agnostic if you feel so inclined.
+- Whenever you see text within triangle brackets, this is placeholder text. Make sure to replace the placeholder text and brackets with the right information. For instance `<Favorite_Animal>` would be `tiger`
+- In the bash commands we share with you, the `$` signifies the beginning of a line. You do not need to paste this part of the command into your terminal.
 
 ## 1. Materials Needed
 
 1x needed per team:
-* [Raspberry Pi 4 B ](https://www.adafruit.com/product/4296) (minimum 4gb RAM)
-* [Raspberry Pi Camera Board](https://www.adafruit.com/product/3099)
-* [Camera extension cable](https://www.adafruit.com/product/1731)
-* [BrainCraft Hat](https://www.adafruit.com/product/4374)
-* [Power supply compatible with Raspberry Pi 4](https://www.adafruit.com/product/4298)
-* [microSD card with adapter 16 GB](https://www.adafruit.com/product/2693)
-* [Micro SD Card Reader](https://www.adafruit.com/product/939) (optional)
-* [USB C to USB A Adapter](https://www.adafruit.com/product/5030) (optional)
-* [Raspberry Pi Case](https://www.adafruit.com/product/4301)
-* [Camera Case](https://www.adafruit.com/product/3253)
-* [Tripod](https://www.amazon.com/dp/B08C53F6CD) (optional)
 
+- [Raspberry Pi 4 B ](https://www.adafruit.com/product/4296) (minimum 4gb RAM)
+- [Raspberry Pi Camera Board](https://www.adafruit.com/product/3099)
+- [Camera extension cable](https://www.adafruit.com/product/1731)
+- [BrainCraft Hat](https://www.adafruit.com/product/4374)
+- [Power supply compatible with Raspberry Pi 4](https://www.adafruit.com/product/4298)
+- [microSD card with adapter 16 GB](https://www.adafruit.com/product/2693)
+- [Micro SD Card Reader](https://www.adafruit.com/product/939) (optional)
+- [USB C to USB A Adapter](https://www.adafruit.com/product/5030) (optional)
+- [Raspberry Pi Case](https://www.adafruit.com/product/4301)
+- [Camera Case](https://www.adafruit.com/product/3253)
+- [Tripod](https://www.amazon.com/dp/B08C53F6CD) (optional)
 
 ## 2. Setting up a Network Between your Computer and a Raspberry PI
 
 _Goal: In this section we are installing an operating system on our Raspberry Pi, connecting to our internet network, and making sure that our laptop can easily communicate with the Raspberry Pi._
 
 **Required Equipment:**
-* Computer
-* MicroSD card 16GB
-* Adaptor for microSD to your computer (usb-C port)
-* [Raspberry Pi 4](https://www.adafruit.com/product/4296)
 
+- Computer
+- MicroSD card 16GB
+- Adaptor for microSD to your computer (usb-C port)
+- [Raspberry Pi 4](https://www.adafruit.com/product/4296)
 
 ### 2.1 Installing an Operating System on your Raspberry PI
 
-
-
-* Take your SD card out of the package, or use one that you have close by but make sure that it’s empty because we’re going to completely overwrite it. Connect your SD card to your computer using your microSD adapter for USB-C (if you’re using a newer Mac).
-* Visit [this link](https://www.raspberrypi.org/software/) and click on the “Download for MacOs” button and go through the steps to install on your computer. If the install is successful you should be able to see this:
-![alt_text](images/image14.png)
-* Choose the latest operating system.
-* To make sure that you are mounting the image of this operating system on your RasperyPi(not your computer - THE SD CARD), plug and unplug the SD card so that you can see it appear and disappear on the storage section of the Raspberry Pi Imager. That way you’ll make sure that you are installing the operating system in the correct place.
-* Click the gear button in the lower right hand corner of the Raspberry Pi Imager and choose the options as detailed in the screenshot below. Note, you should choose your own username, WiFi settings, and password.
-![alt_text](images/image19.png)
-* Click “WRITE” - this will install the latest operating system on your SD card.
+- Take your SD card out of the package, or use one that you have close by but make sure that it’s empty because we’re going to completely overwrite it. Connect your SD card to your computer using your microSD adapter for USB-C (if you’re using a newer Mac).
+- Visit [this link](https://www.raspberrypi.org/software/) and click on the “Download for MacOs” button and go through the steps to install on your computer. If the install is successful you should be able to see this:
+  ![alt_text](images/image14.png)
+- Choose the latest operating system.
+- To make sure that you are mounting the image of this operating system on your RasperyPi(not your computer - THE SD CARD), plug and unplug the SD card so that you can see it appear and disappear on the storage section of the Raspberry Pi Imager. That way you’ll make sure that you are installing the operating system in the correct place.
+- Click the gear button in the lower right hand corner of the Raspberry Pi Imager and choose the options as detailed in the screenshot below. Note, you should choose your own username, WiFi settings, and password.
+  ![alt_text](images/image19.png)
+- Click “WRITE” - this will install the latest operating system on your SD card.
 
 ### 2.2 Connecting your Raspberry Pi to the Internet
 
@@ -61,11 +59,9 @@ _NOTE: In a classroom with many students we must turn the Pis one by one and see
 
 **Required Downloads:**
 
-* [Visit the nmap install page here](https://nmap.org/download.html)
+- [Visit the nmap install page here](https://nmap.org/download.html)
 
 Install nmap on your computer. nmap is a network sniffing tool for understanding network traffic. The goal is to identify the IP address of our raspberry PI.
-
-
 
 1. First identify your own IP address. You can do this by holding on the “option” button on your Mac keyboard while clicking on the “wifi” button on your top menu. Write down the IP address that your computer is using. The first time you run nmap from your terminal make sure you do it without turning on your PI.
 
@@ -74,8 +70,7 @@ nmap -sP <YOUR_IP_ADDRESS>/24
 nmap -sP 192.168.1.79/24
 ```
 
-
-2. Now that you’ve seen the IP addresses that are in your network, turn on your PI and see if there is _a new IP address. _The new IP address will be the IP address that your PI is using. Note, if you don’t see a new IP address you might have to plug the SD card back on your computer and make sure that you’ve done all the steps in the previous section correctly. Once you identify it you’re going to want to ssh into it from your Mac’s terminal:
+2. Now that you’ve seen the IP addresses that are in your network, turn on your PI and see if there is \_a new IP address. \_The new IP address will be the IP address that your PI is using. Note, if you don’t see a new IP address you might have to plug the SD card back on your computer and make sure that you’ve done all the steps in the previous section correctly. Once you identify it you’re going to want to ssh into it from your Mac’s terminal:
 
 ```bash
 ssh <PI USERNAME>@<YOUR IP NETWORK>
@@ -83,49 +78,54 @@ ssh <PI USERNAME>@<YOUR IP NETWORK>
 ssh pi-name@192.168.1.90
 ```
 
-
 3. If you don’t find your raspberry address here, or if it doesn’t work do:
 
 ```bash
-ssh pi-name@raspberrypi.local
+ssh username@hostname.local
 ```
 
 4. Say "yes" and connect to the pi using the password you set earlier. If you are able to ssh then you’re connected to the internet!
 
 5. Copy and paste the IP address.
 6. Say “yes” and connect to the pi using the password you set earlier. If you are able to ssh then you’re connected to the internet!
-7.  Write down your PI’s **IP address** AND **your new password** somewhere safe, we’re going to use them later on in the tutorial.
-
+7. Write down your PI’s **IP address** AND **your password** somewhere safe, we’re going to use them later on in the tutorial.
 
 ### 2.3 Seeing and Controlling your Raspberry Pi’s Desktop through your Laptop
 
 **Useful links:**
-* [Connecting to RasPI without display](https://spin.atomicobject.com/2019/06/09/raspberry-pi-laptop-display)
-* [Connecting via VNC](https://magpi.raspberrypi.org/articles/vnc-raspberry-pi )
 
+- [Connecting to RasPI without display](https://spin.atomicobject.com/2019/06/09/raspberry-pi-laptop-display)
+- [Connecting via VNC](https://magpi.raspberrypi.org/articles/vnc-raspberry-pi)
 
 [We outline the steps below, but check out this tutorial for more info on connecting via VNC.](https://www.raspberrypi.org/documentation/remote-access/vnc/) We've copied the commands below from this tutorial.
 
 You can install VNC via the command line running:
+
 ```bash
-pi@hostname:~ $ sudo apt update
-pi@hostname:~ $ sudo apt install realvnc-vnc-server realvnc-vnc-viewer
+# this is just updating some basic software
+sudo apt update
+sudo apt-get update
+sudo apt-get -y upgrade
+sudo apt-get install -y python3-pip
+sudo pip install --upgrade setuptools
+#this line is what installs realvnc
+sudo apt install realvnc-vnc-server realvnc-vnc-viewer
 ```
 
 After installing the VNC server, you have to enable it.
 
 ```bash
-pi@hostname:~ $ sudo raspi-config
+sudo raspi-config
 ```
 
-A pop-up will appear → navigate to “Interface/ing Options” → navigate to “P3 VNC” → Select “Yes” → navigate down and select “Finish”.
+A pop-up will appear → navigate to “Interface/ing Options” → navigate to “I3 VNC” → Select “Yes” → navigate down and select “Finish”.
 
 Now we install VNC on our computer by [downloading it from here](https://www.realvnc.com/en/connect/download/viewer/).
 
-To connect to your Raspberry Pi’s desktop launch the VNC viewer and type down the IP address of your PI as the VNC server address. Use username `pi` and the password you changed above. You initially might have some trouble connecting and you’ll get an error that might say `Cannot Currently Show the Desktop`. If so, follow the first instruction [here](https://www.tomshardware.com/how-to/fix-cannot-currently-show-desktop-error-raspberry-pi ) on how to change the resolution of the desktop. Try again. If it works … hooray! If not, keep trying until you figure out what the problem is. Awesome! We’re ready to begin the fun part.
-
+To connect to your Raspberry Pi’s desktop launch the VNC viewer and type down the IP address of your PI as the VNC server address. Use username `pi` and the password you changed above. You initially might have some trouble connecting and you’ll get an error that might say `Cannot Currently Show the Desktop`. If so, follow the first instruction [here](https://www.tomshardware.com/how-to/fix-cannot-currently-show-desktop-error-raspberry-pi) on how to change the resolution of the desktop. Try again. If it works … hooray! If not, keep trying until you figure out what the problem is. Awesome! We’re ready to begin the fun part.
 
 ## 3. Setting Up The Camera
+
 _[Most of this section is sourced from this guide](https://projects.raspberrypi.org/en/projects/getting-started-with-picamera)_
 
 ### Introduction
@@ -134,8 +134,8 @@ This section will walk through how to connect the Raspberry Pi Camera Module to 
 
 Before plugging in or unplugging anything always ensure your Raspberry Pi is off and disconnected from power.
 
-
 ### Connect the Camera:
+
 ![alt_text](images/image16.png)
 ![alt_text](images/image9.gif)
 
@@ -146,29 +146,27 @@ Before plugging in or unplugging anything always ensure your Raspberry Pi is off
 5. Push the black plastic clip back into place firmly, but make sure you’re pressing it down vertically.
 6. Place the Camera board into the protective plastic case.
 
-
 ### Enabling, Testing, and Troubleshooting
 
-
-
 1. Startup your Raspberry Pi.
-2. Connect with VNC Viewer as detailed previously
-3. Go to the main menu > Preferences > Raspberry Pi Configuration tool
-4. Select the Interfaces tab and ensure that the camera is enabled
-5. Reboot your Raspberry Pi by going to main menu > Logout > Reboot
+2. Connect using SSH as detailed previously: ` bash ssh username@ipaddress`
+3. run the command sudo raspi-config
+4. user cursor keys to select and open Interfacing Options
+5. Select I1 "Legacy Camera" and answer Yes to enable legacy camera support.
+6. Use the arrow keys to select Finish and then reboot
+7. Once you've exited the menu, input `sudo nano /boot/config.txt` to open the config.txt file.
+8. find the line `hdmi_force_hotplug=1` and uncomment it by removing the `#` at the beginning of the line.
+9. reboot your Pi by typing `sudo reboot`
 
-Once the Pi has rebooted, reconnect using VNC Viewer. Open up a terminal window using VNC Viewer and type this command that should take a still picture and save it to the Desktop.
-
+Once the Pi has rebooted, connect using VNC Viewer. Open up a terminal window using VNC Viewer and type this command that should take a still picture and save it to the Desktop.
 
 ```bash
 raspistill -o Desktop/image.jpg
 ```
 
-
 If you see an image appear on your Pi Desktop it means that your camera is connected correctly. Congratulations!
 
 If you receive the following error it means that your camera is not connected properly.
-
 
 ```bash
 $ raspistill -o Desktop/image.jpg
@@ -180,43 +178,36 @@ mmal: main: Failed to create camera component
 mmal: Camera is not detected. Please check carefully the camera module is installed correctly
 ```
 
-
 To trouble shoot, shutdown your Raspberry Pi, unplug the camera, and reconnect. Ensure it is facing the right direction, it is seated at the bottom of the connective housing, it is not crooked, and the black clip is pushed all the way down.
 
 Also double check on the camera board that the small ribbon cable below the lens is connected to the board evenly. Do not attempt to unplug if it is already connected. This is a very delicate connector and should be treated with the utmost care.
 
 After following these troubleshooting steps, plug in your Raspberry Pi and try to run the command above to take a photo again. The camera connection can be finicky, it may take a couple tries to get it connected the right way.
 
-
 ## 4. Connecting and Configuring Braincraft HAT
-
 
 ### Introduction
 
-*Most of this section is sourced [from this page](https://learn.adafruit.com/adafruit-braincraft-hat-easy-machine-learning-for-raspberry-pi/overview). Visit this tutorial for more info and additional direction.*
+_Most of this section is sourced [from this page](https://learn.adafruit.com/adafruit-braincraft-hat-easy-machine-learning-for-raspberry-pi/overview). Visit this tutorial for more info and additional direction._
 
-The idea behind the Adafruit BrainCraft HAT is that you’d be able to “craft brains” for Machine Learning on the EDGE (Edge is  a way to refer to small computers like phones or other smaller hardware), with Microcontrollers & Microcomputers. This HAT will let you build a wide range of audio/video AI projects while also allowing easy plug-in of sensors and robotics!
+The idea behind the Adafruit BrainCraft HAT is that you’d be able to “craft brains” for Machine Learning on the EDGE (Edge is a way to refer to small computers like phones or other smaller hardware), with Microcontrollers & Microcomputers. This HAT will let you build a wide range of audio/video AI projects while also allowing easy plug-in of sensors and robotics!
 
 As a part of this section we will also connect the controllable mini fan to the bottom of the hat to keep your Pi cool while doing intense AI inference calculations. Most importantly, there’s an On/Off switch that will completely disable the audio codec, so that when it's off, there’s no way it's listening to you.
 
 We’re not going to go in depth on each component, [but if you want to learn more about the board and its pinouts, check this out.](https://learn.adafruit.com/adafruit-braincraft-hat-easy-machine-learning-for-raspberry-pi/pinouts) The basic features are as follows:
 
-
-
-* 1.54" IPS TFT display with 240x240 resolution that can show text or video
-* Stereo speaker ports for audio playback - either text-to-speech, alerts or for creating a voice assistant.
-* Stereo headphone out for audio playback through a stereo system, headphones, or powered speakers.
-* Stereo microphone input - perfect for making your very own smart home assistants
-* Two 3-pin JST STEMMA connectors that can be used to connect more buttons, a relay, or even some NeoPixels!
-* STEMMA QT plug-and-play I2C port, can be used with any I2C STEMMA QT boards, or can be used to connect to Grove I2C devices with an adapter cable.
-* 5-Way Joystick + Button for user interface and control.
-* Three RGB DotStar LEDs for colorful LED feedback.
-
+- 1.54" IPS TFT display with 240x240 resolution that can show text or video
+- Stereo speaker ports for audio playback - either text-to-speech, alerts or for creating a voice assistant.
+- Stereo headphone out for audio playback through a stereo system, headphones, or powered speakers.
+- Stereo microphone input - perfect for making your very own smart home assistants
+- Two 3-pin JST STEMMA connectors that can be used to connect more buttons, a relay, or even some NeoPixels!
+- STEMMA QT plug-and-play I2C port, can be used with any I2C STEMMA QT boards, or can be used to connect to Grove I2C devices with an adapter cable.
+- 5-Way Joystick + Button for user interface and control.
+- Three RGB DotStar LEDs for colorful LED feedback.
 
 ### Braincraft HAT Hardware Install
 
 You will install the Braincraft HAT in two parts, the first is connecting the fan and then you will connect the HAT itself.
-
 
 #### Fan
 
@@ -227,40 +218,26 @@ Carefully position your Braincraft HAT screen side down. Take your fan from its 
 
 Flip the board fan side down and carefully press the rubber joystick cover over the small joystick to the right of the screen. Once you have done this, carefully align the hat’s plastic connector over the pins on your board so the hat is covering the majority of the Raspberry Pi. Firmly press down to make sure the components are connected. Congratulations, your Braincraft board and fan are installed!
 
-
 ### Blinka Setup
 
 Blinka is a CircuitPython (python meant to be run on microcontrollers) library compatibility layer. It allows many of the libraries that were written for CircuitPython to run on CPython for Linux. To learn more about Blinka, you can check out the [CircuitPython on Linux and Raspberry Pi](https://learn.adafruit.com/circuitpython-on-raspberrypi-linux) guide. We will need to install it to get the Braincraft Components up and running.
 
-SSH into your Raspberry Pi or access via VNC viewer and open a terminal. Execute the following series of commands.
-
-
-```bash
-pip3 install setuptools --upgrade
-```
-
-
-Next input the following commands. Note these are several commands that will run one after another. When it asks you if you want to reboot, choose yes.
-
+SSH into your Raspberry Pi or access via VNC viewer and open a terminal. Execute the following series of commands. Note these are several commands that will run one after another. When it asks you if you want to reboot, choose yes.
 
 ```bash
 cd ~
-sudo pip3 install --upgrade adafruit-python-shell
+sudo pip install --upgrade adafruit-python-shell
 wget https://raw.githubusercontent.com/adafruit/Raspberry-Pi-Installer-Scripts/master/raspi-blinka.py
 sudo python3 raspi-blinka.py
 ```
-
 
 Once it reboots, there are a couple CircuitPython libraries to install for the BrainCraft HAT.
 
 The DotStar library is for controlling the 3 on-board DotStar LEDs and the Motor library is for testing out the GPIO pins. Install it using pip using the command below.
 
-
 ```bash
-pip3 install --upgrade adafruit-circuitpython-dotstar adafruit-circuitpython-motor adafruit-circuitpython-bmp280
+pip install --upgrade adafruit-circuitpython-dotstar adafruit-circuitpython-motor adafruit-circuitpython-bmp280
 ```
-
-
 
 ### Fan Service Setup
 
@@ -270,51 +247,40 @@ The fan service basically controls turning GPIO 4 on at startup, which is what t
 
 To install, ssh in or access using VNC Viewer and open a terminal window. Input the following command:
 
-
 ```bash
 sudo raspi-config
 ```
-
 
 Select Performance Options
 
 ![alt_text](images/image7.png)
 
-
 Select Fan
 
 ![alt_text](images/image5.png "image_tooltip")
-
 
 Select Yes
 
 ![alt_text](images/image3.png "image_tooltip")
 
-
 And make sure you put down GPIO pin 4 for the fan
 
 ![alt_text](images/image17.png "image_tooltip")
 
-
 You can customize the fan temperature setting. **For testing, put it on 60.**
-
 
 ![alt_text](images/image4.png "image_tooltip")
 
-
 To see if it’s connected correctly, run a stress test. The following command will stress test the CPU causing the Pi to heat up. The fan should turn on at 60 degrees C.
-
 
 ```bash
 sudo apt-get install stress
 while true; do vcgencmd measure_clock arm; vcgencmd measure_temp; sleep 10; done& stress -c 4 -t 900s
 ```
 
-
 If the fan works as expected, reboot your pi using `sudo reboot` to end the stress test. When it is rebooted follow the instructions above and switch the temperature to 80 degrees.
 
 If the fan does not switch on as expected, try reconnecting the wire.
-
 
 ### Display Module Setup
 
@@ -322,16 +288,14 @@ For some purposes you can setup the display using pure Python, which is probably
 
 To setup run the following script while you are ssh’d in or on a terminal opened through VNC Viewer.
 
-
 ```bash
 cd ~
-sudo pip3 install --upgrade adafruit-python-shell click
+sudo pip install --upgrade adafruit-python-shell click
 sudo apt-get install -y git
 git clone https://github.com/adafruit/Raspberry-Pi-Installer-Scripts.git
 cd Raspberry-Pi-Installer-Scripts
 sudo python3 adafruit-pitft.py --display=st7789_240x240 --rotation=0 --install-type=fbcp
 ```
-
 
 When you are asked to reboot, reboot.
 
@@ -339,12 +303,10 @@ If your display module has a bunch of lines running through it, [check out this 
 
 Test out your camera by running:
 
-
 ```bash
-sudo pip3 install picamera
+sudo pip install picamera
 raspistill -t 0
 ```
-
 
 If it is working you should see what the camera is viewing on your display.
 
@@ -356,23 +318,19 @@ At this point, you should have just about everything already set up.
 
 Besides the display, audio, and fan, this board has quite a few other useful features on it that can be controlled through Python. We'll go through those and how to control them in Python.
 
-
 #### Joystick and Button test
 
 The 5-way Joystick and button uses digitalio and each uses a separate GPIO, so they're really simple to control. Here's a script that will setup the GPIOs, Create Internal Pullups, and then print out the value to the terminal.
 
 What you want to do is create a new python file and paste this script into the file. To do this we use nano, which is a simple text editor that you can access through your terminal. To create a new file you input `nano filename` which will then pull up an empty file with the name you chose. In a terminal access your Pi via ssh, and input the following:
 
-
 ```bash
 nano button_test.py
 ```
 
-
 Paste the following script into the file and save and exit using the commands listed in the terminal.
 
-
-```python3
+```python
 import time
 import board
 from digitalio import DigitalInOut, Direction, Pull
@@ -409,22 +367,17 @@ while True:
   time.sleep(0.01)
 ```
 
-
 Once you have done this run this Python file using
-
 
 ```bash
 python button_test.py
 ```
 
-
 Now try moving the joystick and press the button and you should see it print out what you're pressing.
-
 
 #### DotStar LEDs Test
 
 Using the same method explained above, save this script as `dotstar_test.py`
-
 
 ```python
 import time
@@ -458,44 +411,38 @@ while True:
         time.sleep(0.01)
 ```
 
-
 Run by entering
-
 
 ```bash
 python dotstar_test.py
 ```
 
-
 The DotStar LEDs should start color-cycling in a rainbow.
 
+## ~~5. Tensorflow Setup~~
 
-## 5. Tensorflow Setup
+_Note, there are a few deprecated packages that make this section not work. I recommend using the Lobe.ai method in the following section. However, beware that Lobe.ai does not work on M1 Macbooks_
 
 [You can access the tutorial most of this was copied from here](https://learn.adafruit.com/running-tensorflow-lite-on-the-raspberry-pi-4/tensorflow-lite-2-setup)
 
 _NOTE:_
-* _You might have to run this two times before getting the setup right._
-* _You should run all these commands while ssh’d into your Raspberry Pi’s terminal. Or using_
+
+- _You might have to run this two times before getting the setup right._
+- _You should run all these commands while ssh’d into your Raspberry Pi’s terminal. Or using a terminal opened through VNC Viewer._
 
 There are a few packages that TensorFlow requires that need to be installed. Install these on your Pi by running:
-
 
 ```bash
 sudo apt-get install -y libatlas-base-dev libhdf5-dev libc-ares-dev libeigen3-dev build-essential libsdl-ttf2.0-0 python-pygame festival python3-h5py
 ```
 
-
 Now you have to create a virtual environment. There are a few dependency requirements to install TensorFlow inside the Python Environment:
 
-
 ```bash
-pip3 install virtualenv Pillow numpy pygame
+pip install virtualenv Pillow numpy pygame
 ```
 
-
 Now we must install `rpi-vision`. To do this, install the Adafruit fork of a program originally written by Leigh Johnson that uses the MobileNet V2 model to detect objects. This part will take a few minutes to complete.
-
 
 ```bash
 cd ~
@@ -503,11 +450,11 @@ git clone --depth 1 https://github.com/adafruit/rpi-vision.git
 cd rpi-vision
 python3 -m virtualenv -p $(which python3) .venv
 source .venv/bin/activate
+pip install -e .
 ```
 
 ![alt_text](images/image2.png)
 Install TensorFlow 2.x. You should now be inside a virtual environment. You can tell by the (.venv) on the left side of the command prompt. While in the virtual environment, you may download and install Tensorflow 2.3.1
-
 
 ```bash
 wget https://raw.githubusercontent.com/PINTO0309/Tensorflow-bin/main/previous_versions/download_tensorflow-2.3.1-cp37-none-linux_armv7l.sh
@@ -516,71 +463,61 @@ chmod a+x ./download_tensorflow-2.3.1-cp37-none-linux_armv7l.sh
 
 ./download_tensorflow-2.3.1-cp37-none-linux_armv7l.sh
 
-pip3 install --upgrade setuptools
-
 ```
 
+```bash
+pip install ./tensorflow-2.3.1-cp37-none-linux_armv7l.whl
+pip install -e .
+```
 
+There is a bug with Numpy where it doesn't install a necessary library, so run this line next:
 
 ```bash
-pip3 install ./tensorflow-2.3.1-cp37-none-linux_armv7l.whl
-pip3 install -e .
+sudo apt-get install libatlas-base-dev
 ```
 
 **IF ONE OF THE TWO CODE BLOCKS ABOVE DOESN'T WORK:**
 This is likely because you are using a newer version of Python. To install tensorflow activate your virtual environment by inputing:
-```source .venv/bin/activate```
+`source .venv/bin/activate`
 and then install tensorflow using pip:
-```python3 -m pip install tflite-runtime```
-
+`python3 -m pip install tflite-runtime`
 
 ![alt_text](images/image10.png "image_tooltip")
 
-
 After this, go ahead and reboot the Pi.
-
 
 ```bash
 sudo reboot
 ```
 
-
-*** AFTER REBOOT MAKE SURE YOU GET INTO THE PI AGAIN ***
+**_ AFTER REBOOT MAKE SURE YOU GET INTO THE PI AGAIN _**
 
 Running the Graphic Labeling Demo. Finally you are ready to run the detection software. First you want to run as **root** so that Python can access the Frame Buffer of the display.
-
 
 ```bash
 sudo bash
 ```
 
-
 Then activate the virtual environment again:
-
 
 ```bash
 cd rpi-vision && . .venv/bin/activate
 ```
 
-
 To run a program that will display the object it sees on screen type in the following:
-
 
 ```bash
 python3 tests/pitft_labeled_output.py --tflite
 ```
 
-
 You should see a bunch of text scrolling in your SSH window.
 ![alt_text](images/image1.png)
 
-Now start holding up various items in front of the camera and it should display what it thinks it sees, which isn't actually what the item may be. Some items that it's pretty good about identifying are coffee mugs and animals.
+Now start holding up various items in front ofls the camera and it should display what it thinks it sees, which isn't actually what the item may be. Some items that it's pretty good about identifying are coffee mugs and animals.
 
 ![alt_text](images/image6.png "image_tooltip")
 
-
-
-## 6. Adding a simple machine learning model to your raspberry PI for you to use in your conservation technology projects.
+## 5.1. Adding a simple machine learning model to your raspberry PI for you to use in your conservation technology projects.
 
 **Useful Links:**
 
@@ -592,19 +529,14 @@ First we’re going to train our ML model. To do so, visit [TeachableMachine](ht
 
 Choose:
 
-
-
-* Image project → Standard Image model
+- Image project → Standard Image model
 
 You can either use your webcam or upload pictures to train your ML model. Our suggestion is to start with an easy model first so that you can get a feel for it. Our suggestion is to begin by creating three classes. In the example below:
 
-
-
-* Class 1: I grabbed about 10 water bottles that I had at home and I took over 300 samples (just clicking and holding the button), Class 2: I grabbed other things that were not water bottles and took pictures of them, and Class 3: I took pictures of empty backgrounds. Having 3 classes allows the ML to “train” using bottles, other objects and empty backgrounds. You can pass many more classes to be more specific. The more specific you are with the photos (data) you’re passing, the more specific your ML model will be as well.
-* Hints:
-    * As you take (or choose) pictures make sure you do so with different backgrounds. Changes in light and changes in background -while maintaining the focus on the object that you’re labeling fixed -  will allow us to have better training data.
-![alt_text](images/image11.png)
-After you’ve created your classes, click on “Training”. It’ll take a little bit for the model to train. After that’s completed, click on “Export Mode” and follow [the instructions here.](https://learn.adafruit.com/teachable-machine-raspberry-pi-tensorflow-camera/transferring-to-the-pi)
+- Class 1: I grabbed about 10 water bottles that I had at home and I took over 300 samples (just clicking and holding the button), Class 2: I grabbed other things that were not water bottles and took pictures of them, and Class 3: I took pictures of empty backgrounds. Having 3 classes allows the ML to “train” using bottles, other objects and empty backgrounds. You can pass many more classes to be more specific. The more specific you are with the photos (data) you’re passing, the more specific your ML model will be as well.
+- Hints: \* As you take (or choose) pictures make sure you do so with different backgrounds. Changes in light and changes in background -while maintaining the focus on the object that you’re labeling fixed - will allow us to have better training data.
+  ![alt_text](images/image11.png)
+  After you’ve created your classes, click on “Training”. It’ll take a little bit for the model to train. After that’s completed, click on “Export Mode” and follow [the instructions here.](https://learn.adafruit.com/teachable-machine-raspberry-pi-tensorflow-camera/transferring-to-the-pi)
 
 The first step is to export your shiny new model in **SavedModel** format. This makes it easy to transfer all of the files needed to the Pi, since it comes in a zip file.
 ![alt_text](images/image13.png)
@@ -614,16 +546,13 @@ Now we’re running the model on the Pi. When you clicked the **Download my mode
 
 You can transfer the model to the Raspberry Pi using scp:
 
-
 ```bash
 $ scp <PATH_TO_DOWNLOADS>/converted_savedmodel.zip pi@hostname.local:~
 ```
 
-
-*NOTE: You might need to adjust the first path in the command above to point to your Downloads folder.*
+_NOTE: You might need to adjust the first path in the command above to point to your Downloads folder._
 
 Now, SSH to your Pi and run:
-
 
 ```bash
 $ cd rpi-vision
@@ -632,10 +561,51 @@ source .venv/bin/activate
 python3 tests/pitft_teachablemachine.py ../converted_savedmodel.zip
 ```
 
-
 It will take some time to load the model into memory. During this time, you'll see the BrainCraft logo appear on the display. Afterwards, point your Pi camera and try it out!
 
 **Additional Challenges:**
 
 1. **How do you save the output of your model? For example, you want to see only the predictions of tiger images.**
 2. **[Train your model to recognize audio](https://learn.adafruit.com/adafruit-braincraft-hat-easy-machine-learning-for-raspberry-pi/audio-setup)**
+
+## 6. Running with Lobe.ai
+Previously we used teachable machine to train an ML model. There are some bugs to work out with some deprecated dependencies so we recommend using Lobe.ai instead. However, note that Lobe.ai does not currently work on M1 macs so if you're working on an M1 Mac, you may need to use teachable machine.
+
+Most of this section was copied from [this tutorial](https://learn.adafruit.com/machine-learning-101-lobe-braincraft/get-predictions-on-the-pi). Check it out for more info.
+
+Follow instructions to download and set up Lobe.ai on your computer [here](https://www.lobe.ai/)
+
+SSH into your Raspberry Pi and run the following code to install the necessary packages:
+
+```bash
+cd ~
+git clone https://github.com/lobe/lobe-adafruit-kit.git
+```
+
+Once this is installed, create a new folder in the home directly called `model` by running:
+
+```bash
+cd ~
+mkdir model
+```
+copy your saved `tflite model` and `signature.json` from the folder on your computer where they were exported to your raspberry pi by running the following for each file you want to transfer:
+
+```bash
+scp username@ip-address:/model/ path/on/local/machine
+```
+
+In terminal on the Pi, run the following script to install Lobe and all it's dependencies:
+
+```bash
+cd ~
+wget https://raw.githubusercontent.com/lobe/lobe-python/master/scripts/lobe-rpi-install.sh
+sudo bash lobe-rpi-install.sh
+```
+
+While SSH'd into your pi run the `lobe-basic-prediction.py` program by running the following:
+  
+```bash
+cd ~
+cd lobe-adafruit-kit
+python3 lobe-basic-prediction.py
+```
